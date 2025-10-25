@@ -1,0 +1,9 @@
+The regular expression /\d+/g is used to find all occurrences of one or
+ more consecutive digits within a string.
+\d: This is a special character that matches any digit from 0 to 9.
++: This is a quantifier that means "one or more" of the preceding character or group. 
+In this case, it means one or more digits.
+/g: This is the "global" flag. When used with methods like String.prototype.match(), 
+it ensures that all matches in the string are returned in an array, 
+rather than just the first match found. Without the g flag, match() 
+would only return the first match and its associated details (like index and input string).

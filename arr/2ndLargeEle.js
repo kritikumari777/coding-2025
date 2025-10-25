@@ -1,3 +1,4 @@
+// find secound largest value
 const arr = [2, 4, 5, 5, 5, 3 ,7 ,4, 6, 7,1]
 
 const find2Large = (arr) => {

@@ -1,3 +1,5 @@
 Shallow copy → only first level copied (untouched), nested still linked. 
 
 Deep copy → everything copied, original untouched. -> JSON.parse(JSON.stringify(obj))
+
+s.match(/[a-z]+/g) , [a-zA-Z], [0-9] or (/\d+/g)-> Returns array of matches
