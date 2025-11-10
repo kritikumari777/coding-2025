@@ -3,7 +3,7 @@ var s = '28d456gfetc345'
 console.log(parseInt(s))
 
 const fundSun = (s) => {
-    var st = s.match(/d+/g)
+    var st = s.match(/d+/g) 
     console.log(st)
 }
 

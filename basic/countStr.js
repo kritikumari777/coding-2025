@@ -7,7 +7,7 @@ for(let i of s){
 }
 console.log(count)
 
-const res = s.match(/i/g || []).length
+const res = s.match(/i/g || []).length 
 console.log(res)
 
 const re = s.split("i")
