@@ -11,5 +11,5 @@ const res = arr.reduce((acc, cv)=>{
 
 console.log(res)
 
-const ans = arr.flat()
+const ans = arr.flat(Infinity)
 console.log(ans)

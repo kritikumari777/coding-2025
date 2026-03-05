@@ -13,4 +13,8 @@ let ar = [2, 3, 3, 4, 2, 5, 4, 7]
 let filterArr = [... new Set(ar)]
 console.log(filterArr)
 
+let f = arr.filter((v, i) => arr.indexOf(v) === i)
+
+console.log(f)
+
 

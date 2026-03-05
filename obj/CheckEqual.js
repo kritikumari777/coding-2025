@@ -1,6 +1,6 @@
 
 const equalFun = (obj1, obj2) => {
-  // if both are strictly equal
+  // if both are strictly equal , both object same, like we pass obj1 , obj1
   if (obj1 === obj2) return true;
 
   // if either is null or not an object
@@ -8,7 +8,7 @@ const equalFun = (obj1, obj2) => {
       typeof obj2 !== "object" || obj2 === null) {
     return obj1 === obj2;
   }
-
+ 
   // get keys
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
@@ -18,7 +18,9 @@ const equalFun = (obj1, obj2) => {
 
   // check values
   for (let key of keys1) {
-    if (!equalFun(obj1[key], obj2[key])) {
+    if(!keys2.includes(key)) return false // if keys are different
+
+    if (!equalFun(obj1[key], obj2[key])) { 
       return false;
     }
   }

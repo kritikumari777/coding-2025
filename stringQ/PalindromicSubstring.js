@@ -2,14 +2,19 @@
 //babad
 
 const s = "babad"
-let longest = ""
-for(let i=0; i<s.length; i++){
-    for(let j=i+1;  j < s.length; j++){
-        let sub = s.slice(i,j)
-        if(sub === sub.split("").reverse().join("") && sub.length > longest.length){
-            longest = sub
+  
+const finLongest = (s) => {
+    let lsp = ""
+    for(let i=0; i<s.length; i++){
+        for(let j=i+1;  j < s.length; j++){
+            let temp = s.slice(i,j)
+            let rev = temp.split("").reverse().join("")
+            if(temp == rev && lsp < temp){
+                    lsp=temp
+            }
         }
     }
+    return lsp
 }
 
-console.log(longest)
+console.log(finLongest(s))

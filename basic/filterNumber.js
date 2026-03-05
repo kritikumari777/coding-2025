@@ -1,10 +1,10 @@
 var s = '28d456gfetc345'
 
-console.log(parseInt(s))
+console.log(parseInt(s)) // first number
 
 const fundSun = (s) => {
-    var st = s.match(/d+/g) 
-    console.log(st)
+    var st = s.match(/[0-9]/g) 
+    return st.join().replaceAll(",", "")
 }
 
 console.log(fundSun(s))
