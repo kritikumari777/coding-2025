@@ -1,34 +1,27 @@
 
 const equalFun = (obj1, obj2) => {
-  // if both are strictly equal , both object same, like we pass obj1 , obj1
-  if (obj1 === obj2) return true;
+  let key1 = Object.keys(obj1)
+  let key2 = new Set(Object.keys(obj2))
 
-  // if either is null or not an object
-  if (typeof obj1 !== "object" || obj1 === null ||
-      typeof obj2 !== "object" || obj2 === null) {
-    return obj1 === obj2;
-  }
- 
-  // get keys
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
+  if (key1.length !== key2.size) return false
+  for (let key of key1) {
+    if(!key2.has(key)) return false 
 
-  // length check
-  if (keys1.length !== keys2.length) return false;
+    if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object'  
+      && obj1[key] !== null && obj2[key] !== null) {  //type of null of object
 
-  // check values
-  for (let key of keys1) {
-    if(!keys2.includes(key)) return false // if keys are different
+      if(!equalFun( obj1[key], obj2[key])) return false
 
-    if (!equalFun(obj1[key], obj2[key])) { 
-      return false;
+    }else{
+      if(obj1[key] !== obj2[key]) return false
     }
   }
-  return true;
-};
 
-const obj1 = { a: 1, b: { c: 2 } };
-const obj2 = { a: 1, b: { c: 2 } };
+  return true
+}
+
+const obj1 = { a: 1, b: { c: 2 }, d: null };
+const obj2 = { a: 1, b: { c: 2 }, d: null };
 
 const isTrue = equalFun(obj1, obj2);
-console.log(isTrue ? "two objects are equal" : "two objects are not equal");
+console.log(isTrue ? "Two objects are equal" : "Objects are Not equal");
